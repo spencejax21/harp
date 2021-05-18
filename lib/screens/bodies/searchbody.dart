@@ -14,7 +14,7 @@ class SearchBody extends StatelessWidget {
               size: 50,
             ),
             Text(
-              'Search for a \nsong or album', 
+              'Search for a \nsong, album, \nor user', 
               style: TextStyle(color: Colors.white.withOpacity(0.2), fontSize: 20),
               textAlign: TextAlign.center,
             ),
