@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:music_app/styles.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:like_button/like_button.dart';
 
 // ignore: must_be_immutable
 class Post extends StatefulWidget {
@@ -131,6 +130,10 @@ class _PostState extends State<Post> {
                                 ),
                                 padding: EdgeInsets.symmetric(horizontal: 5)
                               ),
+                              Text(
+                                ' posted 52 seconds ago',
+                                style: TextStyle(color: Colors.white.withOpacity(0.5), fontStyle: FontStyle.italic, fontSize: 11)
+                              )
                             ]),
                             GestureDetector(
                                 child: (_isSaved == true)

@@ -51,7 +51,6 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   assets:
-    - assets/images/moanin.jpg
     - assets/images/ryancircle.png
     - assets/images/in_rainbows.png
     - assets/images/spotify_green_2.png
