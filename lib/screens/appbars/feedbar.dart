@@ -14,15 +14,6 @@ class FeedBar extends StatelessWidget implements PreferredSizeWidget {
       ]))),
       actions: <Widget>[
         IconButton(
-            icon: Icon(
-              Icons.notifications_none,
-              color: Colors.white,
-            ),
-            onPressed: () {
-              Navigator.push(context,
-                  CupertinoPageRoute(builder: (context) => Notifications()));
-            }),
-        IconButton(
           icon: Icon(Icons.add_box_outlined, color: Styles.secondaryColor),
           onPressed: () {
             Navigator.push(
@@ -30,6 +21,16 @@ class FeedBar extends StatelessWidget implements PreferredSizeWidget {
           },
         ),
       ],
+      leading: IconButton(
+        icon: Icon(
+          Icons.notifications_none,
+          color: Colors.white,
+        ),
+        onPressed: () {
+          Navigator.push(context,
+              CupertinoPageRoute(builder: (context) => Notifications()));
+        }
+      ),
       centerTitle: true,
       backgroundColor: Styles.backgroundColor,
     );

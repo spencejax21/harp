@@ -30,10 +30,10 @@ class _EditProfileState extends State<EditProfile> {
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                child: Text('Save', style: TextStyle(color: Colors.white)),
+                child: Text('Save', style: TextStyle(color: Styles.secondaryColor)),
                 style: ButtonStyle(
                   backgroundColor:
-                      MaterialStateProperty.all(Styles.secondaryColor),
+                      MaterialStateProperty.all(Styles.backgroundColor),
                 ),
               )))
         ],
