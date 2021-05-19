@@ -130,7 +130,7 @@ class _SettingsState extends State<Settings> {
                     ),
                     SettingsTile(
                       title: 'Log Out',
-                      titleTextStyle: TextStyle(color: Styles.secondaryColor),
+                      titleTextStyle: TextStyle(color: Colors.red),
                       onPressed: (BuildContext context) {},
                       trailing: Icon(Icons.arrow_forward_ios,
                           color: Colors.white.withOpacity(0.4)),

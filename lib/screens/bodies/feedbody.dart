@@ -1,28 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:music_app/styles.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:music_app/post.dart';
 
-class FeedBody extends StatelessWidget {
+class FeedBody extends StatefulWidget {
+  final List _posts = ['Through the Wire', 'Runaway', 'Heartless'];
+
+  _FeedBodyState createState() => _FeedBodyState();
+
+}
+
+class _FeedBodyState extends State<FeedBody> {
+
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
+        padding: EdgeInsets.all(10),
         scrollDirection: Axis.vertical,
         separatorBuilder: (BuildContext context, int index) => Divider(),
         physics: ClampingScrollPhysics(),
-        itemCount: 3,
+        itemCount: this.widget._posts.length,
         itemBuilder: (BuildContext context, int index) {
-          return Post();
+          return Post(this.widget._posts[index]);
         });
   }
-}
 
-class Post extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        child: Center(
-            child: Card(
-      elevation: 10,
-    )));
-  }
 }
