@@ -68,7 +68,142 @@ class ProfileBody extends StatelessWidget {
                   ],
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.start,
-                )
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 10),
+                  child: Divider(
+                    color: Colors.white.withOpacity(0.5)
+                  )
+                ),
+                Row(
+                  children: [
+                    Container(
+                      //color: Styles.postColor,
+                      child: Column(
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('⭐ Favorite Songs', style: TextStyle(color: Styles.secondaryColor, fontWeight: FontWeight.bold, fontSize: 20),),
+                              Padding(
+                                padding: EdgeInsets.only(top: 5),
+                                child: RichText(
+                                  text: TextSpan(
+                                    style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+                                    children: <TextSpan>[
+                                      TextSpan(
+                                        text: 'Through The Wire',
+                                      ),
+                                      TextSpan(
+                                        text: ' Kanye West',
+                                        style: TextStyle(color: Colors.white.withOpacity(0.5), fontSize: 16)
+                                      )
+                                    ]
+                                  )
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(top: 5),
+                                child: RichText(
+                                  text: TextSpan(
+                                    style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+                                    children: <TextSpan>[
+                                      TextSpan(
+                                        text: 'All Falls Down',
+                                      ),
+                                      TextSpan(
+                                        text: ' Kanye West',
+                                        style: TextStyle(color: Colors.white.withOpacity(0.5), fontSize: 16)
+                                      )
+                                    ]
+                                  )
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(top: 5),
+                                child: RichText(
+                                  text: TextSpan(
+                                    style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+                                    children: <TextSpan>[
+                                      TextSpan(
+                                        text: 'Jesus Walks',
+                                      ),
+                                      TextSpan(
+                                        text: ' Kanye West',
+                                        style: TextStyle(color: Colors.white.withOpacity(0.5), fontSize: 16)
+                                      )
+                                    ]
+                                  )
+                                ),
+                              ),
+                            ],
+                          ),
+                          
+                        ],
+                      )
+                    ),
+                    
+                  ],
+                ),
+                Row(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.only(top: 20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('🎸 Favorite Genre',style: TextStyle(color: Styles.secondaryColor, fontWeight: FontWeight.bold, fontSize: 20)),
+                          Text('Hard Rock', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 30))
+                        ],
+                      ),
+                    ),
+                  ]
+                ),
+                Row(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.only(top: 20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('🎤 Favorite Artist',style: TextStyle(color: Styles.secondaryColor, fontWeight: FontWeight.bold, fontSize: 20)),
+                          Text('Miles Davis', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 30))
+                        ],
+                      ),
+                    ),
+                  ]
+                ),
+                
+                Row(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.only(top: 20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('🏆 Favorite Album',style: TextStyle(color: Styles.secondaryColor, fontWeight: FontWeight.bold, fontSize: 20)),
+                          RichText(
+                            text: TextSpan(
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold),
+                                children: <TextSpan>[
+                              TextSpan(
+                                  text: 'In Rainbows',
+                                  style: TextStyle(fontSize: 30)),
+                              TextSpan(
+                                  text: ' Radiohead',
+                                  style: TextStyle(
+                                      color: Colors.white.withOpacity(0.5),
+                                      fontSize: 22))
+                              ]
+                            )
+                          ),
+                        ],
+                      ),
+                    ),
+                  ]
+                ),
               ],
             ),
             padding: EdgeInsets.only(left: 35, right: 35, top: 20)));
