@@ -84,65 +84,105 @@ class ProfileBody extends StatelessWidget {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text('⭐ Favorite Songs', style: TextStyle(color: Styles.secondaryColor, fontWeight: FontWeight.bold, fontSize: 20),),
-                              Padding(
-                                padding: EdgeInsets.only(top: 5),
-                                child: RichText(
-                                  text: TextSpan(
-                                    style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
-                                    children: <TextSpan>[
-                                      TextSpan(
-                                        text: 'Through The Wire',
-                                      ),
-                                      TextSpan(
-                                        text: ' Kanye West',
-                                        style: TextStyle(color: Colors.white.withOpacity(0.5), fontSize: 16)
+                              Text('Favorite Songs', style: TextStyle(color: Styles.secondaryColor, fontWeight: FontWeight.bold, fontSize: 20),),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Image.asset('assets/images/in_rainbows.png', width: 30, height: 30),
+                                  Padding(
+                                    padding: EdgeInsets.only(top: 5, left: 5, right: 5),
+                                    child: RichText(
+                                      text: TextSpan(
+                                        style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+                                        children: <TextSpan>[
+                                          TextSpan(
+                                            text: 'Through The Wire',
+                                          ),
+                                          TextSpan(
+                                            text: ' \nKanye West',
+                                            style: TextStyle(color: Colors.white.withOpacity(0.5), fontSize: 16, fontWeight: FontWeight.normal)
+                                          )
+                                        ]
                                       )
-                                    ]
-                                  )
-                                ),
+                                    ),
+                                  ),
+                                  GestureDetector(
+                                    child: Image.asset(
+                                      'assets/images/spotify_green_2.png',
+                                      width: 25,
+                                      height: 25,
+                                    ),
+                                    onTap: () {}
+                                  ),
+                                ]
                               ),
-                              Padding(
-                                padding: EdgeInsets.only(top: 5),
-                                child: RichText(
-                                  text: TextSpan(
-                                    style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
-                                    children: <TextSpan>[
-                                      TextSpan(
-                                        text: 'All Falls Down',
-                                      ),
-                                      TextSpan(
-                                        text: ' Kanye West',
-                                        style: TextStyle(color: Colors.white.withOpacity(0.5), fontSize: 16)
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Image.asset('assets/images/in_rainbows.png', width: 30, height: 30),
+                                  Padding(
+                                    padding: EdgeInsets.only(top: 5, left: 5, right: 5),
+                                    child: RichText(
+                                      text: TextSpan(
+                                        style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+                                        children: <TextSpan>[
+                                          TextSpan(
+                                            text: 'So What',
+                                          ),
+                                          TextSpan(
+                                            text: ' \nMiles Davis',
+                                            style: TextStyle(color: Colors.white.withOpacity(0.5), fontSize: 16, fontWeight: FontWeight.normal)
+                                          )
+                                        ]
                                       )
-                                    ]
-                                  )
-                                ),
+                                    ),
+                                  ),
+                                  GestureDetector(
+                                    child: Image.asset(
+                                      'assets/images/spotify_green_2.png',
+                                      width: 25,
+                                      height: 25,
+                                    ),
+                                    onTap: () {}
+                                  ),
+                                ]
                               ),
-                              Padding(
-                                padding: EdgeInsets.only(top: 5),
-                                child: RichText(
-                                  text: TextSpan(
-                                    style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
-                                    children: <TextSpan>[
-                                      TextSpan(
-                                        text: 'Jesus Walks',
-                                      ),
-                                      TextSpan(
-                                        text: ' Kanye West',
-                                        style: TextStyle(color: Colors.white.withOpacity(0.5), fontSize: 16)
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Image.asset('assets/images/in_rainbows.png', width: 30, height: 30),
+                                  Padding(
+                                    padding: EdgeInsets.only(top: 5, left: 5, right: 5),
+                                    child: RichText(
+                                      text: TextSpan(
+                                        style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+                                        children: <TextSpan>[
+                                          TextSpan(
+                                            text: 'Reckoner',
+                                          ),
+                                          TextSpan(
+                                            text: ' \nRadiohead',
+                                            style: TextStyle(color: Colors.white.withOpacity(0.5), fontSize: 16, fontWeight: FontWeight.normal)
+                                          )
+                                        ]
                                       )
-                                    ]
-                                  )
-                                ),
+                                    ),
+                                  ),
+                                  GestureDetector(
+                                    child: Image.asset(
+                                      'assets/images/spotify_green_2.png',
+                                      width: 25,
+                                      height: 25,
+                                    ),
+                                    onTap: () {}
+                                  ),
+                                ]
                               ),
                             ],
                           ),
-                          
                         ],
                       )
                     ),
-                    
                   ],
                 ),
                 Row(
@@ -152,7 +192,7 @@ class ProfileBody extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('🎸 Favorite Genre',style: TextStyle(color: Styles.secondaryColor, fontWeight: FontWeight.bold, fontSize: 20)),
+                          Text('Favorite Genre',style: TextStyle(color: Styles.secondaryColor, fontWeight: FontWeight.bold, fontSize: 20)),
                           Text('Hard Rock', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 30))
                         ],
                       ),
@@ -166,7 +206,7 @@ class ProfileBody extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('🎤 Favorite Artist',style: TextStyle(color: Styles.secondaryColor, fontWeight: FontWeight.bold, fontSize: 20)),
+                          Text('Favorite Artist',style: TextStyle(color: Styles.secondaryColor, fontWeight: FontWeight.bold, fontSize: 20)),
                           Text('Miles Davis', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 30))
                         ],
                       ),
@@ -181,23 +221,39 @@ class ProfileBody extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('🏆 Favorite Album',style: TextStyle(color: Styles.secondaryColor, fontWeight: FontWeight.bold, fontSize: 20)),
-                          RichText(
-                            text: TextSpan(
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold),
-                                children: <TextSpan>[
-                              TextSpan(
-                                  text: 'In Rainbows',
-                                  style: TextStyle(fontSize: 30)),
-                              TextSpan(
-                                  text: ' Radiohead',
-                                  style: TextStyle(
-                                      color: Colors.white.withOpacity(0.5),
-                                      fontSize: 22))
-                              ]
-                            )
+                          Text('Favorite Album',style: TextStyle(color: Styles.secondaryColor, fontWeight: FontWeight.bold, fontSize: 20)),
+                          Row(
+                            children: [
+                              Image.asset('assets/images/in_rainbows.png', width: 50, height: 50),
+                              Padding(
+                                padding: EdgeInsets.only(left: 5, right: 5),
+                                child: RichText(
+                                  text: TextSpan(
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold),
+                                      children: <TextSpan>[
+                                    TextSpan(
+                                        text: 'In Rainbows',
+                                        style: TextStyle(fontSize: 28)),
+                                    TextSpan(
+                                        text: ' \nRadiohead',
+                                        style: TextStyle(
+                                            color: Colors.white.withOpacity(0.5),
+                                            fontSize: 20, fontWeight: FontWeight.normal))
+                                    ]
+                                  )
+                                ),
+                              ),
+                              GestureDetector(
+                                    child: Image.asset(
+                                      'assets/images/spotify_green_2.png',
+                                      width: 25,
+                                      height: 25,
+                                    ),
+                                    onTap: () {}
+                                  ),
+                            ]
                           ),
                         ],
                       ),
