@@ -16,8 +16,8 @@ class MyApp extends StatelessWidget {
       title: 'harp',
       home: Home(title: 'harp'),
       theme: new ThemeData(
-          scaffoldBackgroundColor: Styles.backgroundColor,
-          accentColor: Styles.secondaryColor,
+        scaffoldBackgroundColor: Styles.backgroundColor,
+        accentColor: Styles.secondaryColor,
       ),
     );
   }
