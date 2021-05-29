@@ -30,6 +30,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   settings_ui: ^1.0.0
   like_button: ^2.0.2
+  badges: ^2.0.1
 
 dev_dependencies:
   flutter_test:
@@ -61,6 +62,28 @@ flutter:
 
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
+
+  fonts: 
+    - family: NimbusSansLBold
+      fonts:
+        - asset: fonts/nimbus-sans-l_bold-condensed-italic.ttf
+          weight: 900
+          style: italic
+        - asset: fonts/nimbus-sans-l_bold-condensed.ttf
+          weight: 900
+        - asset: fonts/nimbus-sans-l_bold-italic.ttf
+          weight: 700
+          style: italic
+        - asset: fonts/nimbus-sans-l_bold.ttf
+          weight: 700
+        - asset: fonts/nimbus-sans-l_italic.ttf
+          style: italic
+        - asset: fonts/nimbus-sans-l_regular-condensed-italic.ttf
+          style: italic
+          weight: 300
+        - asset: fonts/nimbus-sans-l_regular-condensed.ttf
+          weight: 300
+        - asset: fonts/nimbus-sans-l_regular.ttf
 
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a

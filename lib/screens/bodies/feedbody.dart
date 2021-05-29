@@ -12,14 +12,16 @@ class FeedBody extends StatefulWidget {
 class _FeedBodyState extends State<FeedBody> {
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
-        padding: EdgeInsets.all(10),
-        scrollDirection: Axis.vertical,
-        separatorBuilder: (BuildContext context, int index) => Divider(),
-        physics: ClampingScrollPhysics(),
-        itemCount: this.widget._posts.length,
-        itemBuilder: (BuildContext context, int index) {
-          return Post(this.widget._posts[index]);
-        });
+    return ScrollConfiguration(
+        behavior: ScrollBehavior(),
+        child: ListView.separated(
+            padding: EdgeInsets.all(15),
+            scrollDirection: Axis.vertical,
+            separatorBuilder: (BuildContext context, int index) => Divider(),
+            physics: BouncingScrollPhysics(),
+            itemCount: this.widget._posts.length,
+            itemBuilder: (BuildContext context, int index) {
+              return Post(this.widget._posts[index]);
+            }));
   }
 }

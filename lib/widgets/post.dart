@@ -20,7 +20,7 @@ class _PostState extends State<Post> {
   @override
   Widget build(BuildContext context) {
     return Material(
-        //elevation: 10,
+        elevation: 10,
         child: Container(
             child: Container(
                 height: 275,
@@ -64,59 +64,55 @@ class _PostState extends State<Post> {
                             Image.asset('assets/images/in_rainbows.png',
                                 width: 130, height: 130),
                             Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                RichText(
-                                  text: TextSpan(
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold),
-                                      children: <TextSpan>[
-                                    TextSpan(
-                                        text: 'Reckoner',
-                                        style: TextStyle(fontSize: 22)),
-                                    TextSpan(
-                                        text: '\nRadiohead',
-                                        style: TextStyle(
-                                            color: Colors.white.withOpacity(0.5),
-                                            fontWeight: FontWeight.normal))
-                                    ]
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  RichText(
+                                      text: TextSpan(
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold),
+                                          children: <TextSpan>[
+                                        TextSpan(
+                                            text: 'Reckoner',
+                                            style: TextStyle(fontSize: 22)),
+                                        TextSpan(
+                                            text: '\nRadiohead',
+                                            style: TextStyle(
+                                                color: Colors.white
+                                                    .withOpacity(0.5),
+                                                fontWeight: FontWeight.normal))
+                                      ])),
+                                  Padding(
+                                    padding: EdgeInsets.symmetric(vertical: 10),
+                                    child: GestureDetector(
+                                        child: Image.asset(
+                                          'assets/images/spotify_green_2.png',
+                                          width: 30,
+                                          height: 30,
+                                        ),
+                                        onTap: () {}),
                                   )
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.symmetric(vertical: 10),
-                                  child: GestureDetector(
-                                    child: Image.asset(
-                                      'assets/images/spotify_green_2.png',
-                                      width: 30,
-                                      height: 30,
-                                    ),
-                                    onTap: () {}
-                                  ),
-                                )
-                              ]
-                            ),
+                                ]),
                           ],
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         ),
                         Row(
                           children: [
-                            Row(
-                              children: [
+                            Row(children: [
                               GestureDetector(
                                 child: (_isLiked == true)
-                                  ? Icon(Icons.favorite,
-                                  color: Colors.red, size: 30)
-                                  : Icon(Icons.favorite_outline,
-                                  color: Colors.white, size: 30),
-                                onTap: (){
-                                  if (_isLiked == true){
-                                    setState((){
+                                    ? Icon(Icons.favorite,
+                                        color: Colors.red, size: 30)
+                                    : Icon(Icons.favorite_outline,
+                                        color: Colors.white, size: 30),
+                                onTap: () {
+                                  if (_isLiked == true) {
+                                    setState(() {
                                       _isLiked = false;
                                     });
-                                  }
-                                  else{
+                                  } else {
                                     setState(() {
                                       _isLiked = true;
                                     });
@@ -124,36 +120,33 @@ class _PostState extends State<Post> {
                                 },
                               ),
                               Padding(
-                                child: Text(
-                                  '0',
-                                  style: TextStyle(color: Colors.white)
-                                ),
-                                padding: EdgeInsets.symmetric(horizontal: 5)
-                              ),
-                              Text(
-                                ' posted 52 seconds ago',
-                                style: TextStyle(color: Colors.white.withOpacity(0.5), fontStyle: FontStyle.italic, fontSize: 11)
-                              )
+                                  child: Text('0',
+                                      style: TextStyle(color: Colors.white)),
+                                  padding: EdgeInsets.symmetric(horizontal: 5)),
+                              Text(' posted 52 seconds ago',
+                                  style: TextStyle(
+                                      color: Colors.white.withOpacity(0.5),
+                                      fontStyle: FontStyle.italic,
+                                      fontSize: 11))
                             ]),
                             GestureDetector(
-                                child: (_isSaved == true)
-                                    ? Icon(Icons.bookmark,
-                                        color: Colors.blue, size: 30)
-                                    : Icon(Icons.bookmark_outline,
-                                        color: Colors.white, size: 30),
-                                onTap: () {
-                                  if (_isSaved == true) {
-                                    setState(() {
-                                      _isSaved = false;
-                                    });
-                                  } else {
-                                    setState(() {
-                                      _isSaved = true;
-                                    });
-                                  }
-                                },
-                              )
-                            
+                              child: (_isSaved == true)
+                                  ? Icon(Icons.bookmark,
+                                      color: Colors.blue, size: 30)
+                                  : Icon(Icons.bookmark_outline,
+                                      color: Colors.white, size: 30),
+                              onTap: () {
+                                if (_isSaved == true) {
+                                  setState(() {
+                                    _isSaved = false;
+                                  });
+                                } else {
+                                  setState(() {
+                                    _isSaved = true;
+                                  });
+                                }
+                              },
+                            )
                           ],
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         )

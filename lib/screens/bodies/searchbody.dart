@@ -5,8 +5,8 @@ class SearchBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Center(
-        child: Column(
+        child: Center(
+            child: Column(
           children: [
             Icon(
               Icons.search,
@@ -14,16 +14,15 @@ class SearchBody extends StatelessWidget {
               size: 50,
             ),
             Text(
-              'Search for a \nsong, album, \nor user', 
-              style: TextStyle(color: Colors.white.withOpacity(0.3), fontSize: 20),
+              'Search for a \nuser',
+              style:
+                  TextStyle(color: Colors.white.withOpacity(0.3), fontSize: 20),
               textAlign: TextAlign.center,
             ),
           ],
           mainAxisAlignment: MainAxisAlignment.center,
-        )
-      ),
-      color: Styles.backgroundColor,
-      padding: EdgeInsets.only(bottom: 50)
-    );
+        )),
+        color: Styles.backgroundColor,
+        padding: EdgeInsets.only(bottom: 50));
   }
 }

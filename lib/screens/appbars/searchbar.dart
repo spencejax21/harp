@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:music_app/styles.dart';
 
-class SearchBar extends StatelessWidget implements PreferredSizeWidget{
+class SearchBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      elevation: 0,
       title: Padding(
         padding: EdgeInsets.symmetric(horizontal: 10),
         child: TextField(
@@ -17,10 +18,9 @@ class SearchBar extends StatelessWidget implements PreferredSizeWidget{
             labelStyle: TextStyle(color: Colors.white),
             contentPadding: EdgeInsets.zero,
             focusedBorder: const OutlineInputBorder(
-              borderRadius: const BorderRadius.all(
-                const Radius.circular(10.0),
-              )
-            ),
+                borderRadius: const BorderRadius.all(
+              const Radius.circular(10.0),
+            )),
             border: const OutlineInputBorder(
               borderRadius: const BorderRadius.all(
                 const Radius.circular(10.0),
@@ -38,6 +38,6 @@ class SearchBar extends StatelessWidget implements PreferredSizeWidget{
       backgroundColor: Styles.backgroundColor,
     );
   }
-  
+
   Size get preferredSize => new Size.fromHeight(kToolbarHeight);
 }
