@@ -31,6 +31,7 @@ dependencies:
   settings_ui: ^1.0.0
   like_button: ^2.0.2
   badges: ^2.0.1
+  introduction_screen: ^2.1.0
 
 dev_dependencies:
   flutter_test:
@@ -55,6 +56,8 @@ flutter:
     - assets/images/ryancircle.png
     - assets/images/in_rainbows.png
     - assets/images/spotify_green_2.png
+    - assets/images/flogo.png
+    - assets/images/google.png
     
 
   # An image asset can refer to one or more resolution-specific "variants", see
