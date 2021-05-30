@@ -19,8 +19,8 @@ class ProfileFavorites extends StatelessWidget {
                     'Songs',
                     style: TextStyle(
                         color: Styles.secondaryColor,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20),
+                        fontWeight: FontWeight.normal,
+                        fontSize: 14),
                   ),
                   Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
                     Image.asset('assets/images/in_rainbows.png',
@@ -112,8 +112,8 @@ class ProfileFavorites extends StatelessWidget {
               Text('Genre',
                   style: TextStyle(
                       color: Styles.secondaryColor,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20)),
+                      fontWeight: FontWeight.normal,
+                      fontSize: 14)),
               Text('Hard Rock',
                   style: TextStyle(
                       color: Colors.white,
@@ -132,8 +132,8 @@ class ProfileFavorites extends StatelessWidget {
               Text('Artist',
                   style: TextStyle(
                       color: Styles.secondaryColor,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20)),
+                      fontWeight: FontWeight.normal,
+                      fontSize: 14)),
               Text('Miles Davis',
                   style: TextStyle(
                       color: Colors.white,
@@ -152,8 +152,8 @@ class ProfileFavorites extends StatelessWidget {
               Text('Album',
                   style: TextStyle(
                       color: Styles.secondaryColor,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20)),
+                      fontWeight: FontWeight.normal,
+                      fontSize: 14)),
               Row(children: [
                 Image.asset('assets/images/in_rainbows.png',
                     width: 50, height: 50),

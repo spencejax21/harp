@@ -7,13 +7,13 @@ class ProfileBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Text('@niceguy123', style: TextStyle(color: Styles.secondaryColor)),
+      title: Text('Profile'),
       actions: <Widget>[
         IconButton(
             icon: Icon(Icons.settings, color: Colors.white),
             onPressed: () {
-              Navigator.push(
-                  context, CupertinoPageRoute(builder: (context) => Settings()));
+              Navigator.push(context,
+                  CupertinoPageRoute(builder: (context) => Settings()));
             })
       ],
       titleTextStyle: TextStyle(fontFamily: 'Serif'),
