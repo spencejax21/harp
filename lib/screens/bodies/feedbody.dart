@@ -12,16 +12,12 @@ class FeedBody extends StatefulWidget {
 class _FeedBodyState extends State<FeedBody> {
   @override
   Widget build(BuildContext context) {
-    return ScrollConfiguration(
-        behavior: ScrollBehavior(),
-        child: ListView.separated(
-            padding: EdgeInsets.all(15),
-            scrollDirection: Axis.vertical,
-            separatorBuilder: (BuildContext context, int index) => Divider(),
-            physics: BouncingScrollPhysics(),
-            itemCount: this.widget._posts.length,
-            itemBuilder: (BuildContext context, int index) {
-              return Post(this.widget._posts[index]);
-            }));
+    return SliverList(
+        delegate: SliverChildBuilderDelegate(
+            (context, index) => Padding(
+                  child: Post(this.widget._posts[index]),
+                  padding: EdgeInsets.all(15),
+                ),
+            childCount: 3));
   }
 }

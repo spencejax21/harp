@@ -10,10 +10,11 @@ import 'package:badges/badges.dart';
 class FeedBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
-    return AppBar(
+    return SliverAppBar(
       elevation: 0,
+      floating: true,
       title: Padding(
-          padding: EdgeInsets.all(15),
+          padding: EdgeInsets.all(10),
           child: (Text.rich(TextSpan(children: [
             //WidgetSpan(child: Icon(Icons.music_note, color: Styles.secondaryColor)),
             TextSpan(
