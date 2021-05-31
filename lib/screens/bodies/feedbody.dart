@@ -16,7 +16,7 @@ class _FeedBodyState extends State<FeedBody> {
         delegate: SliverChildBuilderDelegate(
             (context, index) => Padding(
                   child: Post(this.widget._posts[index]),
-                  padding: EdgeInsets.all(15),
+                  padding: EdgeInsets.only(top: 15, right: 15, left: 15),
                 ),
             childCount: 3));
   }
