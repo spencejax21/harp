@@ -3,6 +3,7 @@ import 'styles.dart';
 import 'screens/home.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:music_app/screens/intro.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,6 +16,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+        DeviceOrientation.portraitUp,
+        DeviceOrientation.portraitDown,
+      ]);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'harp',
