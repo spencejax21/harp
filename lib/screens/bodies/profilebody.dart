@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:music_app/styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:music_app/widgets/profilefavorites.dart';
+import 'package:music_app/screens/editprofile.dart';
 
 class ProfileBody extends StatefulWidget {
   @override
@@ -38,7 +39,13 @@ class _ProfileBodyState extends State<ProfileBody> {
                           SizedBox(
                             height: 32,
                             child: OutlinedButton(
-                              onPressed: (){},
+                              onPressed: (){
+                                Navigator.push(context,
+                                  CupertinoPageRoute(
+                                    builder: (context) => EditProfile()
+                                  )
+                                );
+                              },
                               child: Text('Edit Profile', style: TextStyle(fontSize: 12, color: Styles.secondaryColor)),
                                 style: OutlinedButton.styleFrom(
                                   shape: RoundedRectangleBorder(

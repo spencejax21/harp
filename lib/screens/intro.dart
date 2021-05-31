@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:music_app/styles.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:music_app/screens/feed.dart';
+import 'package:music_app/screens/home.dart';
 
 class Intro extends StatelessWidget{
   @override
@@ -24,12 +24,12 @@ class Intro extends StatelessWidget{
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30,),
               children: [
                 TextSpan(text: 'Sign in ', style: TextStyle(color: Styles.secondaryColor, )),
-                TextSpan(text: 'to start sharing!', style: TextStyle(color: Colors.white)),
+                TextSpan(text: '\nand start sharing!', style: TextStyle(color: Colors.white)),
               ]
             ),
           ),
           bodyWidget: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15),
+            padding: EdgeInsets.only(right: 25, left: 25,),
             child: Column(
               children: [
                 //login with facebook
@@ -71,6 +71,7 @@ class Intro extends StatelessWidget{
             pageColor: Styles.backgroundColor,
             titleTextStyle: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 30),
             bodyAlignment: Alignment.center,
+            footerPadding: EdgeInsets.all(20)
           ),
           footer: RichText(
             textAlign: TextAlign.center,
@@ -78,8 +79,8 @@ class Intro extends StatelessWidget{
               style: TextStyle(color: Colors.white.withOpacity(0.5)),
               children: [
                 TextSpan(text: 'By signing in, you agree to our '),
-                TextSpan(text: 'Terms of Service ', style: TextStyle(decoration: TextDecoration.underline)),
-                TextSpan(text: 'and our '),
+                TextSpan(text: 'Terms of Service', style: TextStyle(decoration: TextDecoration.underline)),
+                TextSpan(text: ' and our '),
                 TextSpan(text: 'Privacy Policy', style: TextStyle(decoration: TextDecoration.underline)),
               ]
             ),
@@ -92,11 +93,11 @@ class Intro extends StatelessWidget{
       skip: const Text('Skip', style: TextStyle(fontWeight: FontWeight.w600, color: Colors.white, fontSize: 16)),
       onDone: () {
       // When done button is pressed
-        // Navigator.push(context, 
-        //   CupertinoPageRoute(
-        //     builder: (BuildContext context) => new Feed(),
-        //   )
-        // );
+        Navigator.pushReplacement(context, 
+          CupertinoPageRoute(
+            builder: (BuildContext context) => Home(),
+          ) 
+        );
       },
       showNextButton: true,
       showDoneButton: true,

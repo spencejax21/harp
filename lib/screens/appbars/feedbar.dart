@@ -18,7 +18,7 @@ class FeedBar extends StatelessWidget implements PreferredSizeWidget {
           child: (Text.rich(TextSpan(children: [
             //WidgetSpan(child: Icon(Icons.music_note, color: Styles.secondaryColor)),
             TextSpan(
-                text: 'Home',
+                text: 'Feed',
                 style: TextStyle(fontSize: 36, fontWeight: FontWeight.w700)),
           ])))),
       actions: <Widget>[

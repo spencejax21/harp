@@ -13,11 +13,6 @@ class _EditProfileState extends State<EditProfile> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Edit profile'),
-        leading: IconButton(
-            icon: Icon(Icons.west_rounded, color: Colors.white),
-            onPressed: () {
-              Navigator.pop(context);
-            }),
         titleTextStyle: TextStyle(fontFamily: 'Serif'),
         centerTitle: true,
         backgroundColor: Styles.backgroundColor,
