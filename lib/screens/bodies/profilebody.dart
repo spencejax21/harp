@@ -3,6 +3,7 @@ import 'package:music_app/styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:music_app/widgets/profilefavorites.dart';
 import 'package:music_app/screens/editprofile.dart';
+import 'package:music_app/screens/profileposts.dart';
 
 class ProfileBody extends StatefulWidget {
   @override
@@ -13,7 +14,7 @@ class _ProfileBodyState extends State<ProfileBody> {
   int _selectedTabBar = 0;
   static List<Widget> _tabViews = [
     ProfileFavorites(),
-    Center(child: Text('Posts', style: TextStyle(color: Colors.red)))
+    ProfilePosts(),
   ];
 
   @override
@@ -26,6 +27,7 @@ class _ProfileBodyState extends State<ProfileBody> {
             //entire profile page
             child: Container(
                 child: Column(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     //profile picture and follow button section
                     Container(
