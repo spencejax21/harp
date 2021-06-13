@@ -3,113 +3,75 @@ import 'package:introduction_screen/introduction_screen.dart';
 import 'package:music_app/styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:music_app/screens/home.dart';
+import 'package:flutter_signin_button/flutter_signin_button.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Intro extends StatelessWidget{
+
+  //sign-in with Google
+  Future<UserCredential> signInWithGoogle() async {
+    // Trigger the authentication flow
+    final GoogleSignInAccount googleUser = await GoogleSignIn().signIn();
+    // Obtain the auth details from the request
+    final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+    // Create a new credential
+    final credential = GoogleAuthProvider.credential(
+      accessToken: googleAuth.accessToken,
+      idToken: googleAuth.idToken,
+    );
+    UserCredential user = await FirebaseAuth.instance.signInWithCredential(credential);
+    if(user.additionalUserInfo.isNewUser){
+      //post new user to database
+      print('New User!');
+    }
+    // Once signed in, return the UserCredential
+    return user;
+  }
+
   @override
   Widget build(BuildContext context) {
-    return IntroductionScreen(
-      pages: [
-        PageViewModel(
-          title: "Welcome to Harp!",
-          body: '',
-          decoration: PageDecoration(
-            pageColor: Styles.backgroundColor,
-            titleTextStyle: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 30),
-            bodyAlignment: Alignment.center,
-          ),
-        ),
-        PageViewModel(
-          titleWidget: RichText(
-            text: TextSpan(
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30,),
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            RichText(text: TextSpan(
+              style: TextStyle(color: Colors.white, fontSize: 36, fontWeight: FontWeight.bold),
               children: [
-                TextSpan(text: 'Sign in ', style: TextStyle(color: Styles.secondaryColor, )),
-                TextSpan(text: '\nand start sharing!', style: TextStyle(color: Colors.white)),
+                TextSpan(text: 'Sign in ', style: TextStyle(color: Styles.secondaryColor)),
+                TextSpan(text: '\nto get started!')
               ]
-            ),
-          ),
-          bodyWidget: Padding(
-            padding: EdgeInsets.only(right: 25, left: 25,),
-            child: Column(
-              children: [
-                //login with facebook
-                TextButton(
-                  onPressed: (){},
-                  child: Container(
-                    color: Color(0xff1877f2),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Image.asset('assets/images/flogo.png', height: 50, width: 50),
-                        Text('Log in with Facebook', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500, fontSize: 16))
-                      ],
-                    )
-                  ),
-                ),
+            )),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 50),
+              child: Column( 
+                children: [
+                  SignInButton(Buttons.GoogleDark, onPressed: ()  async {
 
-                //login with google
-                TextButton(
-                  onPressed: (){},
-                  child: Container(
-                    color: Colors.white,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.all(10),
-                          child: Image.asset('assets/images/google.png', height: 32, width: 32),
-                        ),
-                        Text('Log in with Google', style: TextStyle(color: Colors.black, fontWeight: FontWeight.w500, fontSize: 16))
-                      ],
-                    )
-                  ),
-                ),
-              ],
+                    await signInWithGoogle();
+                    FirebaseAuth auth = FirebaseAuth.instance;
+                    if(auth.currentUser != null){
+                      Navigator.pushReplacement(context,
+                        CupertinoPageRoute(builder: (context) => Home()));
+                    } else {
+                      print('Sign-in failed; please try again!');
+                    }
+                    
+                  }),
+                  SignInButton(Buttons.Facebook, onPressed: (){}),
+                  SignInButton(Buttons.Apple, onPressed: (){})
+                ]
+              ),
             ),
-          ),
-          decoration: PageDecoration(
-            pageColor: Styles.backgroundColor,
-            titleTextStyle: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 30),
-            bodyAlignment: Alignment.center,
-            footerPadding: EdgeInsets.all(20)
-          ),
-          footer: RichText(
-            textAlign: TextAlign.center,
-            text: TextSpan(
-              style: TextStyle(color: Colors.white.withOpacity(0.5)),
-              children: [
-                TextSpan(text: 'By signing in, you agree to our '),
-                TextSpan(text: 'Terms of Service', style: TextStyle(decoration: TextDecoration.underline)),
-                TextSpan(text: ' and our '),
-                TextSpan(text: 'Privacy Policy', style: TextStyle(decoration: TextDecoration.underline)),
-              ]
+            Text('By signing in, you agree to our \nTerms of Service and our Privacy Policy',
+              style: TextStyle(color: Colors.white.withOpacity(0.5),),
+              textAlign: TextAlign.center,
             ),
-          )
+          ],
         )
-      ],
-      next: const Icon(Icons.east_rounded),
-      nextColor: Colors.white,
-      done: const Text("Done", style: TextStyle(fontWeight: FontWeight.w600, color: Colors.white, fontSize: 16)),
-      skip: const Text('Skip', style: TextStyle(fontWeight: FontWeight.w600, color: Colors.white, fontSize: 16)),
-      onDone: () {
-      // When done button is pressed
-        Navigator.pushReplacement(context, 
-          CupertinoPageRoute(
-            builder: (BuildContext context) => Home(),
-          ) 
-        );
-      },
-      showNextButton: true,
-      showDoneButton: true,
-      showSkipButton: true,
-      dotsDecorator: DotsDecorator(
-        size: const Size.square(10.0),
-        spacing: const EdgeInsets.symmetric(horizontal: 3.0),
-        activeShape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(5.0),
-        ),
-        activeSize: const Size(18.0, 9.0),
-      ),
+      )
     );
   }
 }

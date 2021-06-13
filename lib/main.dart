@@ -6,26 +6,13 @@ import 'package:music_app/screens/intro.dart';
 import 'package:flutter/services.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 void main() async {
 
   bool _signedIn;
 
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-
-  FirebaseAuth auth = FirebaseAuth.instance;
-
-  auth.userChanges().listen((User? user){
-    if(user == null){
-      _signedIn = false;
-      print('User is not signed in');
-    }
-    else{
-      _signedIn = true;
-      print('User is signed in!');
-    }
-  });
   runApp(MyApp());
 }
 
@@ -49,7 +36,24 @@ class _MyAppState extends State<MyApp>{
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'harp',
-      home: (_firstOpen == true) ? Intro() : Home(),
+      home: FutureBuilder(
+          future: Firebase.initializeApp(),
+          builder: (_, snapshot) {
+
+            if (snapshot.connectionState == ConnectionState.done) {
+              FirebaseAuth auth = FirebaseAuth.instance;
+              if(auth.currentUser != null){
+                return Home();
+              }
+              return Intro();
+            }
+            return Center(
+              child: SpinKitWave(
+                color: Colors.white,
+                size: 50
+              )
+            );
+          }),
       theme: new ThemeData(
         scaffoldBackgroundColor: Styles.backgroundColor,
         accentColor: Styles.secondaryColor,
