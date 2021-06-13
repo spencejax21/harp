@@ -55,7 +55,6 @@ class _ProfileBodyState extends State<ProfileBody> {
                                 ).copyWith(
                                   side: MaterialStateProperty.resolveWith<BorderSide>(
                                     (Set<MaterialState> states) {
-                                      if(states.contains(MaterialState.disabled)) return null;
                                       return BorderSide(
                                         color: Styles.secondaryColor,
                                         width: 2,

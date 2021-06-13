@@ -10,10 +10,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:music_app/screens/addsong.dart';
 
 class Home extends StatefulWidget {
-  Home({Key key, this.title}) : super(key: key);
-
-  final String title;
-
   @override
   _HomeState createState() => _HomeState();
 }

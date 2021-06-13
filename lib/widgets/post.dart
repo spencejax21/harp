@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 
 // ignore: must_be_immutable
 class Post extends StatefulWidget {
-  String _song;
+  String _song = "none";
 
   Post(String songName) {
     this._song = songName;

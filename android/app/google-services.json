@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "735040356973",
+    "project_id": "harp-facd9",
+    "storage_bucket": "harp-facd9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:735040356973:android:d911ed9c4c3e1e9343f564",
+        "android_client_info": {
+          "package_name": "com.harpmusic.harp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "735040356973-j4h6is6jcji39hlr5r06g9l1fe3s8gie.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.harpmusic.harp",
+            "certificate_hash": "b05d681f70ae7c43014bdc9690fc4e8bfe8fc586"
+          }
+        },
+        {
+          "client_id": "735040356973-765cd4lfhgtug064vdfu0gcbmabd4fu4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA24nm7PVvBbMbj9iqY9KNN8-9BSiFTRfs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "735040356973-765cd4lfhgtug064vdfu0gcbmabd4fu4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
