@@ -7,12 +7,24 @@ import 'package:flutter/services.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-void main() {
+void main() async {
+
+  bool _signedIn;
 
   WidgetsFlutterBinding.ensureInitialized();
-  FirebaseAuth auth = FirebaseAuth.instance;
-  auth.userChanges().listen((User? user){
+  await Firebase.initializeApp();
 
+  FirebaseAuth auth = FirebaseAuth.instance;
+
+  auth.userChanges().listen((User? user){
+    if(user == null){
+      _signedIn = false;
+      print('User is not signed in');
+    }
+    else{
+      _signedIn = true;
+      print('User is signed in!');
+    }
   });
   runApp(MyApp());
 }
@@ -27,7 +39,6 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp>{
 
   bool _firstOpen = true;
-  final Future<FirebaseApp> _initialization = Firebase.initializeApp();
 
   @override
   Widget build(BuildContext context) {
@@ -35,25 +46,14 @@ class _MyAppState extends State<MyApp>{
         DeviceOrientation.portraitUp,
         DeviceOrientation.portraitDown,
       ]);
-    return FutureBuilder(
-      
-      future: _initialization,
-      builder: (context, snapshot){
-        if(snapshot.connectionState == ConnectionState.done){
-          return MaterialApp(
-            debugShowCheckedModeBanner: false,
-            title: 'harp',
-            home: (_firstOpen == true) ? Intro() : Home(),
-            theme: new ThemeData(
-              scaffoldBackgroundColor: Styles.backgroundColor,
-              accentColor: Styles.secondaryColor,
-            ),
-          );
-        }
-        return Center(child: Text('Loading'));
-      }
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'harp',
+      home: (_firstOpen == true) ? Intro() : Home(),
+      theme: new ThemeData(
+        scaffoldBackgroundColor: Styles.backgroundColor,
+        accentColor: Styles.secondaryColor,
+      ),
     );
-    
   }
-  
 }
