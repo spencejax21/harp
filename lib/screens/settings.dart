@@ -3,6 +3,7 @@ import 'package:music_app/screens/editprofile.dart';
 import 'package:music_app/styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:settings_ui/settings_ui.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Settings extends StatefulWidget {
   @override
@@ -35,11 +36,6 @@ class _SettingsState extends State<Settings> {
     return Scaffold(
         appBar: AppBar(
           title: Text('Settings'),
-          leading: IconButton(
-              icon: Icon(Icons.west_rounded, color: Colors.white),
-              onPressed: () {
-                Navigator.pop(context);
-              }),
           titleTextStyle: TextStyle(fontFamily: 'Serif'),
           centerTitle: true,
           backgroundColor: Styles.backgroundColor,
@@ -126,14 +122,35 @@ class _SettingsState extends State<Settings> {
                       titleTextStyle: TextStyle(color: Colors.white),
                       onPressed: (BuildContext context) {},
                       trailing: Icon(Icons.arrow_forward_ios,
-                          color: Colors.white.withOpacity(0.4)),
+                      color: Colors.white.withOpacity(0.4)),
                     ),
                     SettingsTile(
                       title: 'Log Out',
-                      titleTextStyle: TextStyle(color: Colors.red),
-                      onPressed: (BuildContext context) {},
+                      titleTextStyle: TextStyle(color: Colors.redAccent[400]),
+                      onPressed: (BuildContext context) {
+                        showDialog(context: context, builder: (BuildContext context) {
+                          return AlertDialog(
+                            title: Text('Log out?', style: TextStyle(color: Colors.white)),
+                            backgroundColor: Styles.alertColor,
+                            actions: [
+                              TextButton(
+                                onPressed: (){
+                                  FirebaseAuth.instance.signOut();
+                                },
+                                child: Text('Yes', style: TextStyle(color: Colors.red))
+                              ),
+                              TextButton(
+                                onPressed: (){
+                                  Navigator.pop(context);
+                                },
+                                child: Text('No', style: TextStyle(color: Styles.secondaryColor))
+                              )
+                            ],
+                          );
+                        });
+                      },
                       trailing: Icon(Icons.arrow_forward_ios,
-                          color: Colors.white.withOpacity(0.4)),
+                      color: Colors.white.withOpacity(0.4)),
                     ),
                   ],
                 )

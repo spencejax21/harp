@@ -18,18 +18,28 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
+  #firebase
+  firebase_core: "0.7.0"
+  firebase_analytics: ^5.0.2
+  firebase_auth: "^0.20.1"
+  google_sign_in: "^4.5.1"
+  flutter_facebook_auth: "^1.0.0"
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   settings_ui: ^1.0.0
   like_button: ^2.0.2
+  badges: ^2.0.1
+  introduction_screen: ^2.1.0
+  flutter_signin_button: ^2.0.0
+  flutter_spinkit: "^4.1.2"
 
 dev_dependencies:
   flutter_test:
@@ -54,6 +64,8 @@ flutter:
     - assets/images/ryancircle.png
     - assets/images/in_rainbows.png
     - assets/images/spotify_green_2.png
+    - assets/images/flogo.png
+    - assets/images/google.png
     
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -61,6 +73,28 @@ flutter:
 
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
+
+  fonts: 
+    - family: NimbusSansLBold
+      fonts:
+        - asset: fonts/nimbus-sans-l_bold-condensed-italic.ttf
+          weight: 900
+          style: italic
+        - asset: fonts/nimbus-sans-l_bold-condensed.ttf
+          weight: 900
+        - asset: fonts/nimbus-sans-l_bold-italic.ttf
+          weight: 700
+          style: italic
+        - asset: fonts/nimbus-sans-l_bold.ttf
+          weight: 700
+        - asset: fonts/nimbus-sans-l_italic.ttf
+          style: italic
+        - asset: fonts/nimbus-sans-l_regular-condensed-italic.ttf
+          style: italic
+          weight: 300
+        - asset: fonts/nimbus-sans-l_regular-condensed.ttf
+          weight: 300
+        - asset: fonts/nimbus-sans-l_regular.ttf
 
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a

@@ -1,0 +1,76 @@
+{
+  "project_info": {
+    "project_number": "456555869146",
+    "project_id": "harp-3e1bf",
+    "storage_bucket": "harp-3e1bf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:456555869146:android:70458be55be9e405c486e3",
+        "android_client_info": {
+          "package_name": "com.harpmusic.harp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "456555869146-f987inj66e8oe3ldeqo0ho9f7qrf7brh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_r8Oq2okx4rz5Bo1-4gKcL62zl0rm2WE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "456555869146-f987inj66e8oe3ldeqo0ho9f7qrf7brh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:456555869146:android:4ef65d23b20236aec486e3",
+        "android_client_info": {
+          "package_name": "com.harpmusic.harpapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "456555869146-2gjnus3k6mqoq2riot6o63sqj9n85dai.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.harpmusic.harpapp",
+            "certificate_hash": "b05d681f70ae7c43014bdc9690fc4e8bfe8fc586"
+          }
+        },
+        {
+          "client_id": "456555869146-f987inj66e8oe3ldeqo0ho9f7qrf7brh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_r8Oq2okx4rz5Bo1-4gKcL62zl0rm2WE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "456555869146-f987inj66e8oe3ldeqo0ho9f7qrf7brh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
